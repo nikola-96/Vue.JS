@@ -8,8 +8,15 @@
   <body>
     <div id="app">
       <h1 v-bind:title="menu">{{ title }}</h1>
-      <!-- u title ce ispistya ono sto je pod navodnicima kada predjemo preko misa -->
       <p v-text="content"></p>
+      <ul>
+        <li v-for="sinItem in items">{{ sinItem }}</li>
+        <!--v-for nam sluzi kao forech, uzima niz i ispuje vrednosti i tog niza-->
+      </ul>
+      <input type="text" v-model="item" />
+      <!--pod v-modelom smo stavili da sve ono sto se tu ubaci ima tu vrednost idem-->
+      <button @click="items.push(item)">Add item</button
+      ><!--onda ovde dodajem addeventlistener kao @click i kazemo da sve sto je item stavljeno ubaci u niz items-->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -17,7 +24,8 @@
         el: "#app",
         data: {
           title: "My title",
-          content: "Neki tekst  na srpskom", //ono sto je u v-text pod navodnicama, zapravo ispisuje to odavde tamo u tom delu u kom mi to trazimo
+          item: "",
+          items: ["prvo", "drugo"],
           menu: "Ovo je vezba"
         }
       });
