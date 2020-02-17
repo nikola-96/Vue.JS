@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-bind:title="menu">{{ title }}</h1>
+      <!-- u title ce ispistya ono sto je pod navodnicima kada predjemo preko misa -->
+      <p v-text="content"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          title: "My title",
+          content: "Neki tekst  na srpskom", //ono sto je u v-text pod navodnicama, zapravo ispisuje to odavde tamo u tom delu u kom mi to trazimo
+          menu: "Ovo je vezba"
+        }
+      });
+    </script>
+  </body>
+</html>
