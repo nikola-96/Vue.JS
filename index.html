@@ -13,6 +13,9 @@
           <!--ovde koristimo foreach da ispisemo sve iz niza items-->
           {{ item.text }}
           <div v-if="item.checked">Aleksa je prdnuo.</div>
+          <button @click="item.checked = ! item.checked ">Promeni</button>
+          <!--ovde na klik uhvatimo ono sto je u item.checked
+          i tu ubacujemo suporotno od onog sto se nalazi u item.checked-->
           <!--ovde postavljamo uslov ako je iz objekata tacno da se pojavi div i ispise ovo -->
         </li>
       </ul>
