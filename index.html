@@ -7,26 +7,27 @@
   </head>
   <body>
     <div id="app">
-      <h1 v-bind:title="menu">{{ title }}</h1>
-      <p v-text="content"></p>
+      <h1>Test</h1>
       <ul>
-        <li v-for="sinItem in items">{{ sinItem }}</li>
-        <!--v-for nam sluzi kao forech, uzima niz i ispuje vrednosti i tog niza-->
+        <li v-for="item in items">
+          <!--ovde koristimo foreach da ispisemo sve iz niza items-->
+          {{ item.text }}
+          <div v-if="item.checked">Aleksa je prdnuo.</div>
+          <!--ovde postavljamo uslov ako je iz objekata tacno da se pojavi div i ispise ovo -->
+        </li>
       </ul>
-      <input type="text" v-model="item" />
-      <!--pod v-modelom smo stavili da sve ono sto se tu ubaci ima tu vrednost idem-->
-      <button @click="items.push(item)">Add item</button
-      ><!--onda ovde dodajem addeventlistener kao @click i kazemo da sve sto je item stavljeno ubaci u niz items-->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
+
         data: {
-          title: "My title",
-          item: "",
-          items: ["prvo", "drugo"],
-          menu: "Ovo je vezba"
+          items: [
+            { text: "ovo je proba 1", checked: true }, // ovo je objekat koji smo kreirali sa vrednostima
+            { text: "ovo je proba 2", checked: true },
+            { text: "ovo je proba 3", checked: true }
+          ]
         }
       });
     </script>
